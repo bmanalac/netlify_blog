@@ -3,6 +3,11 @@ import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+const PostContainer = styled.div`
+  border: 1px solid blue;
+  padding: 1rem;
+`
+
 const PostLink = styled(Link)`
   border: 1px solid black;
   padding: 2rem 1rem;
@@ -13,10 +18,12 @@ const PostLink = styled(Link)`
 
 const PostPage = (data) => {
   const postsData = data.data.allMarkdownRemark.edges
+  
   return (
-    <div>
+    <PostContainer id="post-container">
       {postsData.map((post) => {
         const { id, frontmatter } = post.node 
+        
         return (
           <PostLink key={id} to={frontmatter.path}>
             <h1>{frontmatter.title}</h1>
@@ -25,12 +32,12 @@ const PostPage = (data) => {
           </PostLink>
         ) 
       })}
-    </div>
+    </PostContainer>
   )
 }
 
 PostPage.defaultProps = {
-  query: PropTypes.object,
+  data: PropTypes.object,
 }
 
 export default PostPage

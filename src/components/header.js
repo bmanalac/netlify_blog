@@ -20,17 +20,22 @@ const HeaderLogoContainer = styled.div`
 const LinkStyled = styled(Link)`
     color: white;
     text-decoration: none;
+    padding: 5px;
 `
 
-const Header = ({ siteTitle }) => (
-  <HeaderContainer>
+const Header = ({ siteTitle, links }) => (
+  <HeaderContainer id="header-container">
     <HeaderLogoContainer>
       <h1>
         <LinkStyled to="/">
           {siteTitle}
         </LinkStyled>
       </h1>
-
+      {Object.entries(links).map(link => (
+        <LinkStyled key={link} to={link[1]}>
+          {link[0].charAt(0).toUpperCase() + link[0].substring(1)}
+        </LinkStyled>
+      ))}
     </HeaderLogoContainer>
   </HeaderContainer>
 )

@@ -36,7 +36,7 @@ const Layout = ({ children, data }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.func,
 }
 
 export default Layout
@@ -46,7 +46,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-      }
+      } 
     }
   }
 `

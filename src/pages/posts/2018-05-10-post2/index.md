@@ -1,5 +1,5 @@
 ---
-path: /2018-05-10-post2
+path: /post-2
 templateKey: blogTemplate
 title: Test 2
 tags: test

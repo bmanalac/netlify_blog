@@ -11,9 +11,7 @@ const BlogPost = styled.div`
   border: 1px solid #000; 
 `
 
-export default function Template({ 
-  data, 
-}) {
+export default function Template({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
 
